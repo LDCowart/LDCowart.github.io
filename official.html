@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georgia Stall Cleaning - YouTube Channel</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e67e22;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+            --accent-color: #27ae60;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M50 5 L95 95 L5 95 Z" fill="%23e67e22" opacity="0.1"/></svg>');
+            background-size: 100px 100px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        main {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+            border-left: 5px solid var(--accent-color);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        #video-container {
+            margin-top: 2rem;
+        }
+        .video-placeholder {
+            background-color: #d0d3d4;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #666;
+            border-radius: 8px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20 80 Q50 20 80 80" stroke="%2327ae60" fill="none" stroke-width="2"/></svg>');
+            background-size: 100px 100px;
+        }
+        #subscribe-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+        #subscribe-button:hover {
+            background-color: #d35400;
+        }
+        #subscriber-count {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        .farm-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Georgia Stall Cleaning</h1>
+    </header>
+    <main>
+        <div class="card">
+            <svg class="farm-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            <p>Welcome to Georgia Stall Cleaning - the ultimate YouTube channel for all your horse stall cleaning needs! Learn tips, tricks, and techniques to keep your horse's living space clean and healthy in the beautiful state of Georgia and beyond.</p>
+        </div>
+        <div class="card" id="video-container">
+            <svg class="farm-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+            <h2>Featured Video</h2>
+            <div class="video-placeholder">
+                <p>Latest Georgia Stall Cleaning video</p>
+            </div>
+        </div>
+        <div class="card">
+            <svg class="farm-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <button id="subscribe-button">Subscribe</button>
+            <div id="subscriber-count">Subscribers: 0</div>
+        </div>
+    </main>
+    <script>
+        let subscribers = 0;
+        const subscribeButton = document.getElementById('subscribe-button');
+        const subscriberCount = document.getElementById('subscriber-count');
+
+        subscribeButton.addEventListener('click', () => {
+            subscribers++;
+            subscriberCount.textContent = `Subscribers: ${subscribers}`;
+            if (subscribers === 1) {
+                alert('Thanks for being our first Georgia Stall Cleaning subscriber!');
+            } else {
+                alert('Thanks for subscribing to Georgia Stall Cleaning!');
+            }
+        });
+    </script>
+</body>
+</html>
