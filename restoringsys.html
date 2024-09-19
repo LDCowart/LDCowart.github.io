@@ -81,24 +81,20 @@
             const progressInterval = setInterval(() => {
                 if (width >= 100) {
                     clearInterval(progressInterval); // Stop the progress bar
-                    clearInterval(backgroundInterval); // Stop the flashing
-                    gif.style.display = 'block'; // Show the GIF
-                    statusText.style.display = 'none'; // Hide status text
-                    progressBar.style.display = 'none'; // Hide progress bar
-                    return;
+                    return; // Exit function
                 }
-                width += (100 / 1500); // Increment width based on 15 seconds
+                width += (100 / 1650); // Increment width based on 16.5 seconds
                 progressBar.style.width = width + '%';
                 progressBar.textContent = Math.round(width) + '%'; // Round to nearest integer
             }, 10); // Update every 10 milliseconds
 
-            // Show GIF after 16 seconds
+            // Show GIF after 16.5 seconds
             setTimeout(() => {
-                gif.style.display = 'block'; // Show the GIF
                 clearInterval(backgroundInterval); // Stop the flashing
+                gif.style.display = 'block'; // Show the GIF
                 statusText.style.display = 'none'; // Hide status text
                 progressBar.style.display = 'none'; // Hide progress bar
-            }, 16500); // 16 seconds
+            }, 16500); // 16500 milliseconds = 16.5 seconds
         });
     </script>
 </body>
