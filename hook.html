@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You've Been Hacked</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            animation: flash 1s infinite;
+            background-color: black;
+        }
+
+        @keyframes flash {
+            0% { background-color: red; }
+            25% { background-color: blue; }
+            50% { background-color: green; }
+            75% { background-color: yellow; }
+            100% { background-color: purple; }
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .progress-container {
+            width: 80%;
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #76c7c0;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        #gif {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            max-width: 100%; /* Responsive GIF size */
+        }
+    </style>
+</head>
+<body>
+    <h1>You've Been Hacked!</h1>
+    <audio id="audio" loop>
+        <source src="https://ia800906.us.archive.org/23/items/HallOfTheMountainKing_201902/Hall%20of%20the%20Mountain%20King.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const audio = document.getElementById('audio');
+            audio.play();
+
+            simulateDownload();
+        });
+
+        function simulateDownload() {
+            const progressBar = document.querySelector('.progress-bar');
+            const gif = document.getElementById('gif');
+            let width = 0;
+            const totalDuration = 110; // Total duration in seconds
+            const intervalTime = 1100; // Update every 1.1 seconds
+            const increment = 100 / (totalDuration / (intervalTime / 1000)); // Calculate increment based on time
+
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    gif.style.display = 'block'; // Show the GIF when progress reaches 100%
+                    setTimeout(() => {
+                        window.location.href = "restoringsys.html"; // Redirect to another webpage after 6 seconds
+                    }, 6000); // 6000 milliseconds = 6 seconds
+                    return;
+                }
+                width += increment;
+                progressBar.style.width = width + '%';
+                progressBar.textContent = Math.round(width) + '%'; // Round to nearest integer
+            }, intervalTime); // Update every 1100ms
+        }
+    </script>
+
+    <div class="progress-container">
+        <div class="progress-bar">0%</div>
+    </div>
+    <div>
+        <h2>Downloading Credit Card Numbers Now...</h2>
+    </div>
+    <img id="gif" src="tmp (1).GIF" alt="Hacked GIF">
+</body>
+</html>

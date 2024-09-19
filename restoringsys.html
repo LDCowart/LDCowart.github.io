@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erratic Flashing Page</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            transition: background-color 0.1s;
+            color: white;
+            text-align: center;
+        }
+
+        #gif {
+            display: none; /* Initially hidden */
+            position: absolute;
+            max-width: 80%; /* Responsive size */
+            max-height: 80%; /* Responsive size */
+        }
+
+        .progress-container {
+            width: 80%;
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #76c7c0;
+            text-align: center;
+            line-height: 30px;
+            color: black;
+            transition: width 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <audio id="audio" loop>
+        <source src="https://ia801300.us.archive.org/4/items/dxrk-rave_202402/Dxrk%20%E3%83%80%E3%83%BC%E3%82%AF%20-%20RAVE.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <img id="gif" src="Desa.jpg" alt="Flashing GIF">
+    
+    <div class="progress-container">
+        <div class="progress-bar">0%</div>
+    </div>
+    <p id="status">Restoring Virtual Machine</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            audio.play(); // Play the audio
+
+            let isBlack = true; // Track current color
+            const gif = document.getElementById('gif');
+            const progressBar = document.querySelector('.progress-bar');
+            const statusText = document.getElementById('status');
+            let width = 0;
+
+            // Function to toggle background color
+            const toggleBackground = () => {
+                document.body.style.backgroundColor = isBlack ? 'white' : 'black';
+                isBlack = !isBlack; // Flip the color state
+            };
+
+            // Set interval to change background color every 100 milliseconds
+            const backgroundInterval = setInterval(toggleBackground, 100);
+
+            // Progress bar logic
+            const progressInterval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(progressInterval); // Stop the progress bar
+                    clearInterval(backgroundInterval); // Stop the flashing
+                    gif.style.display = 'block'; // Show the GIF
+                    statusText.style.display = 'none'; // Hide status text
+                    progressBar.style.display = 'none'; // Hide progress bar
+                    return;
+                }
+                width += (100 / 1500); // Increment width based on 15 seconds
+                progressBar.style.width = width + '%';
+                progressBar.textContent = Math.round(width) + '%'; // Round to nearest integer
+            }, 10); // Update every 10 milliseconds
+
+            // Show GIF after 16 seconds
+            setTimeout(() => {
+                gif.style.display = 'block'; // Show the GIF
+                clearInterval(backgroundInterval); // Stop the flashing
+                statusText.style.display = 'none'; // Hide status text
+                progressBar.style.display = 'none'; // Hide progress bar
+            }, 16500); // 16 seconds
+        });
+    </script>
+</body>
+</html>
