@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erratic Flashing Page</title>
+    <title>Lynx OS Sys Restore</title>
     <style>
         body {
             margin: 0;
@@ -83,7 +83,7 @@
                     clearInterval(progressInterval); // Stop the progress bar
                     return; // Exit function
                 }
-                width += (100 / 1650); // Increment width based on 16.5 seconds
+                width += (100 / 1600); // Increment width based on 16.5 seconds
                 progressBar.style.width = width + '%';
                 progressBar.textContent = Math.round(width) + '%'; // Round to nearest integer
             }, 10); // Update every 10 milliseconds
@@ -94,7 +94,7 @@
                 gif.style.display = 'block'; // Show the GIF
                 statusText.style.display = 'none'; // Hide status text
                 progressBar.style.display = 'none'; // Hide progress bar
-            }, 16500); // 16500 milliseconds = 16.5 seconds
+            }, 16000); // 16500 milliseconds = 16.5 seconds
         });
     </script>
 </body>
