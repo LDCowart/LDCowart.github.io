@@ -79,27 +79,29 @@
     <script>
         // Array of archived pages with associated keywords
         const archivePages = [
-            { url: '1stindex.html', keywords: ['Archive', 'archive', 'index', 'index page'] },
-            { url: 'ex.html', keywords: ['Archive', 'archive', 'example', 'sample', 'test'] },
-            { url: 'home.html', keywords: ['home', 'main', 'landing'] },
-            { url: '1.html', keywords: ['1', 'archive', 'Doctrine', 'Pdf', 'PDF', 'pdf'] },
-            { url: '2ndoldestindex.html', keywords: ['Archive', 'archive', 'index', '2nd', 'Index', 'index page'] },
-            { url: '404-not-found.png', keywords: ['Archive', 'archive', 'PNG', 'Image', 'image', 'png', '404'] },
-            { url: '404.html', keywords: ['Archive', 'archive', '404', 'webpage', 'archived', 'test'] },
-            { url: '42224.html', keywords: ['Archive', 'archive', 'ALO', 'UrijahLand', 'History', 'history', 'april', 'april 22nd'] },
-            { url: 'Archive.html', keywords: ['Archive', 'archive', 'ALO', 'UrijahLand', 'History', 'history', 'may', 'may 22nd'] },
-            { url: 'CNAME', keywords: ['Archive', 'archive', 'code', 'Code', 'source', 'debug'] },
-            { url: 'Desa.jpg', keywords: ['Archive', 'archive', 'JPG', 'jpeg', 'jpg', 'Image', 'image', 'Ron', 'Desantis', 'Ron Desantis'] },
-            { url: 'Ed.html', keywords: ['Archive', 'archive', 'Everyday Devotions', 'Index', 'Doctrine', 'Webpage'] },
-            { url: 'Government.html', keywords: ['Archive', 'archive', 'ALO', 'UrijahLand', 'History', 'history'] },
-            { url: 'IMG_3749.jpg', keywords: ['Archive', 'archive', 'JPG', 'jpeg', 'jpg', 'Gunner', 'Image', 'image'] },
-            { url: 'IMG_8064.jpg', keywords: ['Archive', 'archive', 'JPG', 'jpeg', 'jpg', 'Landon', 'Image', 'image'] },
-            { url: 'IMG_9331.jpg', keywords: ['Archive', 'archive', 'JPG', 'jpeg', 'jpg', 'Landon', 'Image', 'image', 'MAGA', 'maga'] },
-            { url: 'README.md', keywords: ['Archive', 'archive', 'Read Me', 'Text File', 'Text', 'txt', 'TXT'] },
-            { url: 'SECURITY.md', keywords: ['Archive', 'archive', 'Security', 'Text File', 'text', 'txt', 'TXT'] },
-            { url: 'battle_overview.html', keywords: ['Archive', 'archive', 'war', 'Battle', 'Webpage', 'War'] },
-            { url: 'beed.js', keywords: ['Archive', 'archive', 'Code', 'js', 'Javascript', 'Dev'] },
-            { url: 'bigtime.jpeg', keywords: ['Archive', 'archive', 'jpeg', 'jpg', 'JPG', 'Image', 'image', 'Urijah'] },
+            { url: '1stindex.html', keywords: ['Archive', 'archive', 'index', 'index page'], displayName: '1st Index Page'},
+            
+            { url: 'ex.html', keywords: ['Archive', 'archive', 'example', 'sample', 'test'], displayName: 'Password Page' },
+            { url: 'home.html', keywords: ['home', 'main', 'landing'], displayName: 'UrijahLand Homepage' },
+           
+            { url: '1.html', keywords: ['1', 'archive', 'Doctrine', 'Pdf', 'PDF', 'pdf'], displayName: 'Theological Document' },
+            { url: '2ndoldestindex.html', keywords: ['Archive', 'archive', 'index', '2nd', 'Index', 'index page'], displayName: '2nd Index Page' },
+            { url: '404-not-found.png', keywords: ['Archive', 'archive', 'PNG', 'Image', 'image', 'png', '404'], displayName: '404 Source Image' },
+            { url: '404.html', keywords: ['Archive', 'archive', '404', 'webpage', 'archived', 'test'], displayName: '404 Page' },
+            { url: '42224.html', keywords: ['Archive', 'archive', 'ALO', 'UrijahLand', 'History', 'history', 'april', 'april 22nd'], displayName: 'UrijahLand I|I Archive' },
+            { url: 'Archive.html', keywords: ['Archive', 'archive', 'ALO', 'UrijahLand', 'History', 'history', 'may', 'may 22nd'], displayName: 'UrijahLand I|II Archive' },
+            { url: 'CNAME', keywords: ['Archive', 'archive', 'code', 'Code', 'source', 'debug'], displayName: 'CNAME File' },
+            { url: 'Desa.jpg', keywords: ['Archive', 'archive', 'JPG', 'jpeg', 'jpg', 'Image', 'image', 'Ron', 'Desantis', 'Ron Desantis'], displayName: 'Ron Desantis Image' },
+            { url: 'Ed.html', keywords: ['Archive', 'archive', 'Everyday Devotions', 'Index', 'Doctrine', 'Bible', 'Webpage'], displayName: 'Everyday Devotions Homepage' },
+            { url: 'Government.html', keywords: ['Archive', 'archive', 'ALO', 'UrijahLand', 'History', 'history'], displayName: 'UrijahLand Government' },
+            { url: 'IMG_3749.jpg', keywords: ['Archive', 'archive', 'JPG', 'jpeg', 'jpg', 'Gunner', 'Image', 'image'], displayName: 'Gunner Image' },
+            { url: 'IMG_8064.jpg', keywords: ['Archive', 'archive', 'JPG', 'jpeg', 'jpg', 'Landon', 'Image', 'image'], displayName: 'Landon Image, by creek' },
+            { url: 'IMG_9331.jpg', keywords: ['Archive', 'archive', 'JPG', 'jpeg', 'jpg', 'Landon', 'Image', 'image', 'MAGA', 'maga'], displayName: 'Landon Image, MAGA' },
+            { url: 'README.md', keywords: ['Archive', 'archive', 'Read Me', 'Text File', 'Text', 'txt', 'TXT'], displayName: 'READ ME' },
+            { url: 'SECURITY.md', keywords: ['Archive', 'archive', 'Security', 'Text File', 'text', 'txt', 'TXT'], displayName: 'Security Policy' },
+            { url: 'battle_overview.html', keywords: ['Archive', 'archive', 'war', 'Battle', 'Webpage', 'War'], displayName: 'Battle Overview' },
+            { url: 'beed.js', keywords: ['Archive', 'archive', 'Code', 'js', 'Javascript', 'Dev'], displayName: 'Javascript "beed"' },
+            { url: 'bigtime.jpeg', keywords: ['Archive', 'archive', 'jpeg', 'jpg', 'JPG', 'Image', 'image', 'Urijah'], displayName: 'Urijah Image' },
         ];
 
         function searchLinks() {
@@ -119,7 +121,7 @@
                     resultItem.className = 'result-item';
                     const link = document.createElement('a');
                     link.href = page.url;
-                    link.innerText = page.url;
+                    link.innerText = page.displayName;
                     resultItem.appendChild(link);
                     resultsContainer.appendChild(resultItem);
                 });
@@ -130,7 +132,7 @@
     </script>
     
     <div class="version">
-        <p>v1.2.1</p>
+        <p>v1.3.7</p>
     </div>
 
 </body>
