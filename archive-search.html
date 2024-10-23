@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Search Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        .result-item {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Archive Search Engine</h1>
+    <div class="search-container">
+        <input type="text" id="search-keyword" placeholder="Enter keywords here...">
+        <button onclick="searchLinks()">Search</button>
+    </div>
+
+    <div class="results" id="results"></div>
+
+    <script>
+        // Array of archived pages with associated keywords
+        const archivePages = [
+            { url: '1stindex.html', keywords: ['Archive', 'archive', 'index'] },
+            { url: 'ex.html', keywords: ['Archive', 'archive', 'index','example', 'sample', 'test'] },
+            { url: 'home.html', keywords: ['home', 'main', 'landing'] },
+        ];
+
+        function searchLinks() {
+            const keywordInput = document.getElementById('search-keyword').value.toLowerCase();
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            // Filter archive pages based on keywords
+            const filteredPages = archivePages.filter(page => 
+                page.keywords.some(keyword => keyword.toLowerCase().includes(keywordInput))
+            );
+
+            // Display results
+            if (filteredPages.length > 0) {
+                filteredPages.forEach(page => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    const link = document.createElement('a');
+                    link.href = page.url;
+                    link.innerText = page.url;
+                    resultItem.appendChild(link);
+                    resultsContainer.appendChild(resultItem);
+                });
+            } else {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
