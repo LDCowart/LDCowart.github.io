@@ -20,4 +20,23 @@ h1 {
     padding: 10px;
     margin: 5px 0;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+
+
+    #auth {
+    background-color: #fff3cd;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#leaderboard {
+    margin-top: 20px;
+    background-color: #d1ecf1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.currency button {
+    margin-left: 10px;
+}
 }
