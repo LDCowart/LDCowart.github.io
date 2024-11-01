@@ -1,0 +1,23 @@
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #ff6f61;
+    text-align: center;
+}
+
+#currency-list {
+    margin-top: 20px;
+}
+
+.currency {
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
