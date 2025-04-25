@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN PORTAL</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: "Courier New", Courier, monospace;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #f00;
+            text-shadow: 0 0 10px #f00;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #0f0;
+            background: #111;
+            color: #0f0;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background: #0f0;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #f00;
+            color: #fff;
+        }
+        p, #content {
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        #message {
+            color: #f00;
+        }
+        #content {
+            color: #0f0;
+            text-shadow: 0 0 10px #0f0;
+            font-size: 1.5em;
+        }
+        a {
+            color: #0f0;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        a:hover {
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <h1>TOP SECRET ADMIN ACCESS</h1>
+    <p>Enter the classified passcode below:</p>
+    <input type="password" id="passcode" placeholder="********">
+    <button onclick="checkPasscode()">SUBMIT</button>
+    <p id="message"></p>
+    <div id="content" class="hidden">
+        <h2>ACCESS GRANTED</h2>
+        <p>Welcome, Admin. You may proceed.</p>
+        <a href="#" id="proceed-link">Proceed</a>
+    </div>
+
+    <script>
+        function checkPasscode() {
+            const passcode = document.getElementById('passcode').value;
+            const message = document.getElementById('message');
+            const content = document.getElementById('content');
+
+            if (passcode === "COS2") {
+                message.textContent = "";
+                content.classList.remove('hidden');
+            } else {
+                message.textContent = "ACCESS DENIED: Incorrect passcode.";
+                content.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
