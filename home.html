@@ -1,6 +1,4 @@
 <html>
-
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://trusted-cdn.com;">
         <head>
             <title>L.D Cowart Home</title>
             <link rel="icon" type="image/x-icon" href="https://ldcowart.com/flag-round-250.png">
@@ -210,7 +208,6 @@
    
   <script>
   // Modal Image Gallery
-const cleanInput = DOMPurify.sanitize(userInput);
   function onClick(element) {
     document.getElementById("img01").src = element.src;
     document.getElementById("modal01").style.display = "block";
