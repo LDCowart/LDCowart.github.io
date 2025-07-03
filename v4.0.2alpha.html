@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>L.D. Cowart - Galactic Ministry</title>
+  <link rel="icon" href="https://ldcowart.com/flag-round-250.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at top left, #0f0f0f, #1a1a1a);
+      color: #e0f7ff;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111;
+      padding: 1rem 2rem;
+      box-shadow: 0 0 10px #00f0ff;
+    }
+    .navbar a {
+      color: #00f0ff;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+    .navbar a:hover {
+      color: #00c0cc;
+    }
+    .hero {
+      height: 100vh;
+      background: url('https:ldcowart.com/backgrounder.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-content {
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 10px;
+      animation: fadeIn 2s ease-in;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px #00f0ff;
+      color: #00f0ff;
+    }
+    .hero a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid #00f0ff;
+      color: #00f0ff;
+      background: transparent;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
+      text-decoration: none;
+    }
+    .hero a:hover {
+      background: #00f0ff;
+      color: #000;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .about {
+      padding: 4rem 2rem;
+      background-color: #121212;
+      text-align: center;
+    }
+    .about h2 {
+      color: #00f0ff;
+      margin-bottom: 1rem;
+    }
+    .about p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #ccc;
+    }
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .focus-item {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border: 1px solid #333;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #00f0ff88;
+    }
+    .focus-item h3 {
+      color: #00f0ff;
+      margin-bottom: 0.5rem;
+    }
+    .focus-item p {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Home</a>
+  <div>
+    <a href="#about">About</a>
+    <a href="#mission">Mission Field</a>
+    <a href="funny.html"></a>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>"As Iron Sharpens Iron..."</h1>
+    <a href="https://www.bible.com/bible/116/PRO.27.NLT">Proverbs 27:17</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About Landon Cowart</h2>
+  <p>All the nitty-gritty details of our ministry</p>
+  <div class="focus-grid">
+    <div class="focus-item">
+      <h3>Evangelism</h3>
+      <p>My mission is to spread the gospel in my community, empowered by the Holy Spirit.</p>
+    </div>
+    <div class="focus-item">
+      <h3>Theology</h3>
+      <p>Blending Pentecostal roots with SBC beliefs, I affirm spiritual gifts like speaking in tongues and their interpretation (Acts 2:1–4).</p>
+    </div>
+    <div class="focus-item">
+      <h3>Community</h3>
+      <p>Residing in Jackson, GA, I minister across Butts County and through Encounter Life Church in surrounding regions.</p>
+    </div>
+        <div class="focus-item">
+      <h3>Support</h3>
+      <p>If you'd like to support our ministry, subscribe to <strong>@EverydayDevotions</strong> on YouTube and connect with us through comments.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" style="background-color:#181818;">
+  <h2>Online Outreach</h2>
+  <div class="focus-grid">
+    <div class="focus-item">
+      <h3>YouTube Channel</h3>
+      <p>Help grow our ministry online! Join us at <strong>@PentecostalCommentary</strong> and subscribe for teaching and encouragement.</p>
+      <a href="https://youtube.com/@PentecostalCommentary" target="_blank" style="display:inline-block;margin-top:1rem;padding:0.5rem 1.2rem;background:#00f0ff;border:none;color:#000;border-radius:5px;">📺 Subscribe</a>
+    </div>
+    <div class="focus-item">
+      <img src="https:ldcowart.com/ytli.jpg" alt="Bible" style="width:100%;border-radius:10px;">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="mission">
+  <h2>Mission Fields</h2>
+  <p>We are rooted in the South Metro Atlanta region — ministering across counties and communities.</p>
+  <div class="focus-grid">
+    <div class="focus-item">
+      <h3>Butts County GA</h3>
+      <p>Our homebase — a small but spiritually significant region.</p>
+    </div>
+    <div class="focus-item">
+      <h3>Spalding County GA</h3>
+      <p>Neighboring county in need of evangelism and outreach.</p>
+    </div>
+    <div class="focus-item">
+      <h3>Monroe County GA</h3>
+      <p>Contains Forsyth — ripe with opportunity for ministry.</p>
+    </div>
+    <div class="focus-item">
+      <h3>Coweta County GA</h3>
+      <p>An essential part of our mission strategy with high potential.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#111;padding:3rem;text-align:center;">
+  <h2 style="color:#00f0ff;margin-bottom:2rem;">Impact Stats</h2>
+  <div class="focus-grid">
+    <div class="focus-item"><h3>🌍 3</h3><p>Missions Launched</p></div>
+    <div class="focus-item"><h3>👥 2</h3><p>Active Members</p></div>
+    <div class="focus-item"><h3>📆 1 Year</h3><p>Since Foundation</p></div>
+    <div class="focus-item"><h3>💰 $0</h3><p>Funds Raised</p></div>
+  </div>
+</section>
+
+<footer style="background:#000;color:#888;text-align:center;padding:2rem;">
+  <p>VERSION 4.1 STABLE</p>
+  <p>© 2025 Landon Cowart</p>
+</footer>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && e.shiftKey && e.code === 'KeyA') {
+    window.location.href = 'funny.html';
+  }
+});
+</script>
+
+
+</body>
+</html>
